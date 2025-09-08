@@ -302,15 +302,14 @@
                         <configuration>
                             <minimizeJar>true</minimizeJar>
                             <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
+                            <artifactSet>
+                                <excludes>
+                                    <exclude>org.jspecify:jspecify</exclude>
+                                </excludes>
+                            </artifactSet>
                             <filters>
                                 <filter>
                                     <artifact>com.google.*:*</artifact>
-                                    <excludes>
-                                        <exclude>META-INF/**</exclude>
-                                    </excludes>
-                                </filter>
-                                <filter>
-                                    <artifact>org.checkerframework:*</artifact>
                                     <excludes>
                                         <exclude>META-INF/**</exclude>
                                     </excludes>
@@ -328,10 +327,6 @@
                                 <relocation>
                                     <pattern>com.google.errorprone</pattern>
                                     <shadedPattern>io.dropwizard.logback.shaded.errorprone</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>org.checkerframework</pattern>
-                                    <shadedPattern>io.dropwizard.logback.shaded.checkerframework</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>javax.annotation</pattern>
